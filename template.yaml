@@ -65,9 +65,9 @@ Resources:
     Properties:
       Description: Image Resizing Lambda
       Handler: index.handler
-      Runtime: nodejs18.x
+      Runtime: nodejs22.x
       Timeout: 60
-      CodeUri: dist/bundle.zip
+      CodeUri: dist/image-resizer-service.zip
       MemorySize: !Ref MemorySize
       Layers:
         - !Ref ImageMagickLayer
