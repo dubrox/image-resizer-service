@@ -1,4 +1,4 @@
-# image-resizer-service
+# Image resizer service
 
 This serverless application deploys a Lambda function and API Gateway to your AWS account that reads images from a S3 bucket (whose name defined at deployment) and serves them through API Gateway.
 
@@ -11,6 +11,10 @@ To resize the same image, simply give dimensions as `width` and `height` GET par
 After deploying the application, you are strongly recommended to deploy a CDN distribution in front of API Gateway, so your responses are cached and it will improve performance and reduce costs significantly.
 
 ## Release Notes
+
+### 0.1.5
+
+- Upgrade to Node 18.x runtime
 
 ### 0.1.4
 

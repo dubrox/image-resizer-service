@@ -1,5 +1,5 @@
 const path = require('path');
-const ZipFilesPlugin = require('webpack-zip-files-plugin');
+const ZipPlugin = require('zip-webpack-plugin');
 
 module.exports = {
     // Specify the entry point for our app.
@@ -34,17 +34,14 @@ module.exports = {
             {
                 test: /\.json$/,
                 exclude: /node_modules/,
-                loaders: ['json-loader']
+                loader: 'json-loader'
             }
         ]
     },
     plugins: [
-        new ZipFilesPlugin({
-            entries: [
-                {src: path.join(__dirname, './dist/index.js'), dist: 'index.js'}
-            ],
-            output: path.join(__dirname, './dist/bundle'),
-            format: 'zip',
+        new ZipPlugin({
+            filename: 'image-resizer-service.zip',
+            include: ['index.js'],
         }),
     ]
 };
